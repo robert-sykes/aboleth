@@ -5,6 +5,10 @@
 #include "mem/memory.h"
 
 void executeInstruction(abInstruction instruction);
+
 void initCPU(uint16_t startAddr);
 void stepCPU();
+
 bool cpuHasHalted();
+
+void writeTo16BitRegister(uint16_t reg, uint16_t value);
