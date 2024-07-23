@@ -7,8 +7,13 @@ void writeToMemory(uint8_t address, uint8_t value) {
 }
 
 void writeByteArrayToMemory(const uint8_t* data, size_t size) {
-	for (size_t i = 0; i < size; i++) {
-		_memory[i] = data[i];
+	if (size <= 0x10000) {
+		for (size_t i = 0; i < size; i++) {
+			_memory[i] = data[i];
+		}
+	}
+	else {
+		printf("Loaded %zu bytes exceeds 64kb\n", size);
 	}
 }
 
