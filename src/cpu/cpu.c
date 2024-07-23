@@ -20,3 +20,7 @@ void stepCPU() {
 
 	printf("Value: 0x%04X\n", _registers.PC);
 }
+
+bool cpuHasHalted() {
+	return _registers.PC >= 0xFFFF;
+}

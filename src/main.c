@@ -1,12 +1,16 @@
 #include <stdio.h>
 #include "cpu/cpu.h"
+#include "rom/rom.h"
 #include "mem/memory.h"
 
 int main() {
-	writeToMemory(0x1000, NOP);
+	initCPU(0x100);
 
-	initCPU(0x1000);
-	stepCPU();
+	loadROM("roms/cpu_instrs.gb");
+
+	while (!cpuHasHalted()) {
+		stepCPU();
+	}
 
 	return 0;
 }
