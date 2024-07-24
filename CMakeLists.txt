@@ -11,6 +11,7 @@ add_executable (aboleth
 	src/cpu/cpu.c
 	src/mem/memory.c
 	src/rom/rom.c
+	src/cpu/instructions.c
 )
 
 target_include_directories(aboleth PRIVATE ${SDL2_INCLUDE_DIRS})
